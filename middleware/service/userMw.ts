@@ -101,7 +101,6 @@ export const mwCompareLoginInfo: RequestHandler = async (req: Request, res: Resp
     return res.send(responseResult)
   }
   const { userId, password: pwd } = user
-  console.log(decryptCipherText(pwd))
   const correctPassword = decryptCipherText(pwd) === password
   if (correctPassword) {
     req.body.userId = userId

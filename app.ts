@@ -5,6 +5,7 @@ import cors from 'cors'
 
 // 引入源程序
 import userRouter from './router/userRouter'
+import accountRouter from './router/accountRouter'
 import { routerInterceptor } from './middleware/global'
 
 // 创建Express应用
@@ -21,6 +22,7 @@ app.use(routerInterceptor)
 
 // 路由
 app.use(userRouter)
+app.use(accountRouter)
 
 // 全局错误中间件
 app.use((error: Error, req: Request, res: Response, next: NextFunction) => {

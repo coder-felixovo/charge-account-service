@@ -1,3 +1,7 @@
+/**
+ * 生成格式化日期字符串，格式：yyyy-MM-dd hh:mm:ss
+ * @returns 
+ */
 export const formatDateTime = (): string => {
   const obj = new Date()
   const year = obj.getFullYear()
