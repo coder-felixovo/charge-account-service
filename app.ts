@@ -4,9 +4,10 @@ import morgan from 'morgan'
 import cors from 'cors'
 
 // 引入源程序
+import { routerInterceptor } from './middleware/global'
 import userRouter from './router/userRouter'
 import accountRouter from './router/accountRouter'
-import { routerInterceptor } from './middleware/global'
+import currencyRouter from './router/currencyRouter'
 
 // 创建Express应用
 const app: Express = express()
@@ -23,6 +24,7 @@ app.use(routerInterceptor)
 // 路由
 app.use(userRouter)
 app.use(accountRouter)
+app.use(currencyRouter)
 
 // 全局错误中间件
 app.use((error: Error, req: Request, res: Response, next: NextFunction) => {
